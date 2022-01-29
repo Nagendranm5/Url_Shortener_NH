@@ -1,0 +1,11 @@
+<div align="center">
+	<h2>Generate Short Url</h2>
+</div>
+
+<div align="center">
+	<%= form_for(@url) do |f| %>
+		<%= f.label :Enter_your_url %>
+		<%= f.text_field :original_url, required: true %>
+		<%= f.submit 'Generate Link' %>
+	<% end %>
+</div>

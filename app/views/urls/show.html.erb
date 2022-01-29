@@ -1,0 +1,12 @@
+<h3 align="center">Your original Url Was Successfully Shortened! </br> You can use below url in your browser instead of original url</h3>
+
+<div align="center" style="font-size: 20px;">
+	<p style="margin-right: 45px;">Original Url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= @url.try(:original_url) %></p>
+
+	<p>Generated Url&nbsp;&nbsp;&nbsp;&nbsp;: <%= "http://localhost:3000/io/" + @url.try(:generated_url) %></p>
+
+</div>
+
+<div align="center">
+	<%= link_to "Generate New Url", urls_path %>
+</div>
