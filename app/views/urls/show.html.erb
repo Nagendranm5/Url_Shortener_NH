@@ -1,12 +1,73 @@
-<h3 align="center">Your original Url Was Successfully Shortened! </br> You can use below url in your browser instead of original url</h3>
+<div align="center" style="margin-top: 30px; letter-spacing: 1px; font-size: 20px">
+	<strong>Your Original Url Was Successfully Shortened!</strong>
+	</br>
+</div>
+<div align="center" style="margin-top: 30px;">
+	<em>(You can use below url in your browser instead of original url)</em>
+</div>
+<hr>
+<table align="center" id="myTable">
+	<tbody>
+		<td><strong>Original Url</strong></td>
+		<td><%= @url.try(:original_url)%></td>
+		<td>
+			<button id="btn_1" class="btn-1" onclick="btn_1()" title="Copy to Clipboard">Copy!</button>
+		</td>
+		<tr/>
 
-<div align="center" style="font-size: 20px;">
-	<p style="margin-right: 45px;">Original Url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <%= @url.try(:original_url) %></p>
+		<td><strong>Generated Url&nbsp;&nbsp;</strong></td>
+		<td><%= "http://localhost:3000/io/" + @url.try(:generated_url) %></td>
+		<td>
+			<button id="btn_2" class="btn-2" onclick="btn_2()" title="Copy to Clipboard">Copy!</button>
+		</td>
+	</tbody>
+</table>
 
-	<p>Generated Url&nbsp;&nbsp;&nbsp;&nbsp;: <%= "http://localhost:3000/io/" + @url.try(:generated_url) %></p>
-
+<div align="center" style="font-size: 22px; letter-spacing: -1px;">
+	<strong><%= link_to "Generate New Url", urls_path %></strong>
 </div>
 
-<div align="center">
-	<%= link_to "Generate New Url", urls_path %>
-</div>
+<style type="text/css">
+	table, th, td {
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	  margin-top: 90px;
+	  margin-bottom: 30px;
+	  font-size: 19px;
+	  line-height: 50px;
+	}
+
+	.btn-1 {
+		background-color: lightblue;
+		font-size: 18px;
+		margin-right: 15px;
+		margin-left: 15px;
+		border-color: white;
+	}
+
+	.btn-2 {
+		background-color: lightgreen;
+		font-size: 18px;
+		margin-right: 15px;
+		margin-left: 15px;
+		border-color: white;
+	}
+</style>
+
+<script type="text/javascript">
+
+	function btn_1() {
+		let url = document.getElementById("myTable").rows[0].cells[1].innerHTML;
+		navigator.clipboard.writeText(url);
+		console.log("Original Url Was Copied To Your Clipboard Successfully!");
+		alert("Original Url Was Copied To Your Clipboard Successfully!");
+	}
+
+	function btn_2() {
+		let url = document.getElementById("myTable").rows[1].cells[1].innerHTML;
+		navigator.clipboard.writeText(url);
+		console.log("Generated Url Was Copied To Your Clipboard Successfully!");
+		alert("Generated Url Was Copied To Your Clipboard Successfully!");
+	}
+
+</script>
