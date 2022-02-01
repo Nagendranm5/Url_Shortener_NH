@@ -1,31 +1,34 @@
-<div align="center" style="margin-top: 30px; letter-spacing: 1px; font-size: 20px">
-	<strong>Your Original Url Was Successfully Shortened!</strong>
+<div align="center" style="margin-top: 30px; letter-spacing: 0.9px; font-size: 20px;">
+	<strong>Congratulations&#127882;&nbsp;Your Original Url Was Successfully Shortened!</strong>
 	</br>
 </div>
 <div align="center" style="margin-top: 30px;">
-	<em>(You can use below url in your browser instead of original url)</em>
+	<em>(Hereafter you can use below generated url in your browsers instead of original url)</em>
 </div>
 <hr>
 <table align="center" id="myTable">
 	<tbody>
 		<td><strong>Original Url</strong></td>
 		<td><%= @url.try(:original_url)%></td>
-		<td>
-			<button id="btn_1" class="btn-1" onclick="btn_1()" title="Copy to Clipboard">Copy!</button>
+		<td align="center">
+			<button id="btn_1" class="btn-1" onclick="btn_1()"title="Copy to Clipboard">Copy!</button>
 		</td>
 		<tr/>
 
 		<td><strong>Generated Url&nbsp;&nbsp;</strong></td>
 		<td><%= "http://localhost:3000/io/" + @url.try(:generated_url) %></td>
-		<td>
+		<td style="margin-right: 10px;" align="center">
 			<button id="btn_2" class="btn-2" onclick="btn_2()" title="Copy to Clipboard">Copy!</button>
 		</td>
 	</tbody>
 </table>
 
 <div align="center" style="font-size: 22px; letter-spacing: -1px;">
-	<strong><%= link_to "Generate New Url", urls_path %></strong>
+	<a href="/">
+		<button class="btn-3" title="Generate new url">Generate New</button>
+	</a>
 </div>
+
 
 <style type="text/css">
 	table, th, td {
@@ -33,41 +36,97 @@
 	  border-collapse: collapse;
 	  margin-top: 90px;
 	  margin-bottom: 30px;
-	  font-size: 19px;
-	  line-height: 50px;
+	  font-size: 22px;
+	  line-height: 80px;
+	  background-color: #D2D2D2;
+	/*overflow: hidden;*/
+	  overflow-x: hidden;
+	  overflow-y: hidden;
+	}
+
+	table {
+		/*width: 70%;*/
 	}
 
 	.btn-1 {
-		background-color: lightblue;
-		font-size: 18px;
-		margin-right: 15px;
-		margin-left: 15px;
-		border-color: white;
+		background-color: #D2D2D2;
+		font-size: 20px;
+		border-color: #D2D2D2;
+	    /*padding: 17px 18px;*/
+	    cursor: pointer;
+	    border: none;
 	}
 
 	.btn-2 {
-		background-color: lightgreen;
-		font-size: 18px;
-		margin-right: 15px;
-		margin-left: 15px;
-		border-color: white;
+		background-color: #D2D2D2;
+		font-size: 20px;
+		border-color: #D2D2D2;
+		/*padding: 17px 18px;*/
+		cursor: pointer;
+		border: none;
 	}
+
+	.btn-3 {
+		background-color: #F5E782;
+		padding: 12px 12px;
+		font-size: 18px;
+		border-radius: 10px;
+		font-weight: 700;
+		color: brown;
+		margin-top: 15px;
+		border-color: white;
+		cursor: pointer;
+	}
+
+	body {
+		background-color: #B2ECEE;
+	}
+
 </style>
 
 <script type="text/javascript">
 
 	function btn_1() {
 		let url = document.getElementById("myTable").rows[0].cells[1].innerHTML;
+		let btn = document.getElementById("btn_1");
+		btn.innerHTML = "Copied ✅";
+		btn.style.backgroundColor = "lightgreen"
+		btn.style.fontSize = "11px";
 		navigator.clipboard.writeText(url);
+		setTimeout(button1_name_change, 1500);
+
+		// Display the status in the console
 		console.log("Original Url Was Copied To Your Clipboard Successfully!");
-		alert("Original Url Was Copied To Your Clipboard Successfully!");
+		console.log(navigator.clipboard.readText());
 	}
 
 	function btn_2() {
 		let url = document.getElementById("myTable").rows[1].cells[1].innerHTML;
+		let btn = document.getElementById("btn_2");
+		btn.innerHTML = "Copied ✅";
+		btn.style.backgroundColor = "lightgreen"
+		btn.style.fontSize = "11px";
 		navigator.clipboard.writeText(url);
-		console.log("Generated Url Was Copied To Your Clipboard Successfully!");
-		alert("Generated Url Was Copied To Your Clipboard Successfully!");
+		setTimeout(button2_name_change, 1500);
+
+		// Display the status in the console
+		console.log("Generated Url Was Copied To Your Clipboard Successfully!\n");
+		console.log(navigator.clipboard.readText());
+	}
+
+	function button1_name_change() {
+		let btn = "btn_1";
+		let button = document.getElementById(btn);
+		button.innerHTML = "Copy!";
+		button.style.backgroundColor = "#D2D2D2";
+		button.style.fontSize = "20px";
+	}
+
+	function button2_name_change() {
+		let button = document.getElementById("btn_2");
+		button.innerHTML = "Copy!";
+		button.style.backgroundColor = "#D2D2D2";
+		button.style.fontSize = "20px";
 	}
 
 </script>

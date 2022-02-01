@@ -1,11 +1,36 @@
 <div align="center">
-	<h2>Generate Short Url</h2>
+	<h2>Shorten your url here&nbsp;);</h2>
+</div>
+<hr>
+
+<%= form_for(@url) do |f| %>
+<div align="center" style="font-size: 24px; margin-top: 50px;">
+		<%= f.label "Enter You Url :" %>
+		<%= f.text_field :original_url, required: true %>
+	
 </div>
 
-<div align="center">
-	<%= form_for(@url) do |f| %>
-		<%= f.label :Enter_your_url %>
-		<%= f.text_field :original_url, required: true %>
-		<%= f.submit 'Generate Link' %>
-	<% end %>
+<div align="center" style="font-size: 24px;">
+	<button type="submit" title="Shorten your Url" style="margin-top: 50px;">Shorten</button>
 </div>
+<% end %>
+<style type="text/css">
+	
+	body {
+		background-color: #B2ECEE;
+	}
+
+	button {
+		color: brown;
+		background-color: orange;
+		border: none;
+		border-radius: 8px;
+		font-size: 0.9em;
+		font-weight: 650;
+		letter-spacing: -1px;
+		font-family: monospace;
+		cursor: pointer;
+		padding: 6px 15px;
+	}
+
+</style>
