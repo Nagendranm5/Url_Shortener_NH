@@ -1,10 +1,9 @@
-<div align="center">
-	<h2>Shorten your url here&nbsp;);</h2>
+<div align="center" style="padding: 6.5px 20px; background-color: #073809; font-family: monospace; font-size: 24px; font-weight: 550;">
+	<p style="color: #ECEC0E;">Shorten your url here &#10549;</p>
 </div>
-<hr>
 
 <%= form_for(@url) do |f| %>
-<div align="center" style="font-size: 24px; margin-top: 50px;">
+<div align="center" style="font-size: 21px; margin-top: 40px; font-family: monospace; letter-spacing: -1.8px; word-spacing: -3px; font-weight: 550;">
 		<%= f.label "Enter You Url :" %>
 		<%= f.text_field :original_url, required: true %>
 	
