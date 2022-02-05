@@ -1,4 +1,10 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
 	<div align="center">
 		<div class="home-style">
 			<strong>Congratulations&nbsp;&#127882;&nbsp;Your Original Url Was Successfully Shortened!</strong>
@@ -43,6 +49,10 @@
 
 	<footer style="margin-top: 170px" align="center">Developed by&nbsp;<a href="https://instagram.com/nattu_nagendran" target="_blank"><em>Nagendran M</em></a></footer>
 
+	<div>
+		<i class="fab fa-facebook"></i>
+	</div>
+
 	<!-- Hidden Element for Copying Original Url -->
 	<p id="url-main" style="display: none;"><%= @url.try(:original_url) %></p>
 
@@ -65,13 +75,17 @@
 			margin-top: -10px;
 			letter-spacing: 0.9px;
 			font-size: 20px;
-			padding: 20px 80px;
+			padding: 20px 0px;
+			width: 100%;
+			height: 100%;
 			background-color: #073809;
 			color: white;
 		}
 
 		.home-below-style {
-			padding: 10px 20px;
+			width: 100%;
+			height: 100%;
+			padding: 10px 0px;
 			background-color: #073809;
 			color: orange;
 		}
@@ -161,5 +175,5 @@
 		}
 
 	</script>
-
+</body>
 </html>
