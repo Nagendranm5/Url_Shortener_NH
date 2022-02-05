@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div align="center">
@@ -47,10 +48,14 @@
 		</a>
 	</div>
 
-	<footer style="margin-top: 170px" align="center">Developed by&nbsp;<a href="https://instagram.com/nattu_nagendran" target="_blank"><em>Nagendran M</em></a></footer>
-
-	<div>
-		<i class="fab fa-facebook"></i>
+	<div class="footer-block" align="center" style="margin-top: 112px;">Developed by&nbsp;Nagendran M
+		<div class="social-media-block">
+			<a href="https://github.com/Nagendranm5" class="fa fa-github-square" target="_blank" title="Github"></a>
+			<a href="https://in.linkedin.com/in/nagendranm08122000" class="fa fa-linkedin" target="_blank" title="LinkedIn"></a>
+			<a href="https://www.facebook.com/nagendran.nagendran.9461" class="fa fa-facebook" target="_blank" title="Facebook"></a>
+			<a href="https://www.instagram.com/nattu_nagendran" class="fa fa-instagram" target="_blank" title="Instagram"></a>  
+			<a href="https://twitter.com/nattu_nagendran" class="fa fa-twitter" target="_blank" title="Twitters"></a>
+		</div>
 	</div>
 
 	<!-- Hidden Element for Copying Original Url -->
@@ -86,34 +91,43 @@
 			color: orange;
 		}
 
-		.btn-1 {
-			background-color: #D2D2D2;
+		.btn-1, .btn-2 {
+			background-color: #3F6718;
 			font-size: 20px;
+			color: yellow;
 			border-color: #D2D2D2;
-		    /*padding: 17px 18px;*/
 		    cursor: pointer;
 		    border: none;
+		    border-radius: 8px;
 		}
 
-		.btn-2 {
-			background-color: #D2D2D2;
-			font-size: 20px;
-			border-color: #D2D2D2;
-			/*padding: 17px 18px;*/
-			cursor: pointer;
-			border: none;
+		.btn-1:hover {
+			background-color: yellow;
+			color: #3F6718;
+			opacity: none;
+		}
+
+		.btn-2:hover {
+			background-color: yellow;
+			color: #3F6718;
+			opacity: none;
 		}
 
 		.btn-3 {
-			background-color: #F5E782;
+			/*background-color: #F5E782;*/
+			background-color: #DE922C;
 			padding: 12px 12px;
 			font-size: 18px;
 			border-radius: 10px;
 			font-weight: 700;
 			color: brown;
 			margin-top: 15px;
-			border-color: white;
+			border: none;
 			cursor: pointer;
+		}
+
+		.btn-3:hover {
+			background-color: #B3A99B;
 		}
 
 		body {
@@ -130,9 +144,10 @@
 		function btn_1() {
 			let url = document.getElementById("url-main").innerHTML;
 			let btn = document.getElementById("btn_1");
-			btn.innerHTML = "Copied ✅";
+			btn.innerHTML = "Copied";
 			btn.style.backgroundColor = "lightgreen"
-			btn.style.fontSize = "11px";
+			btn.style.fontSize = "16.5px";
+			btn.style.color = "black";
 			navigator.clipboard.writeText(url);
 			setTimeout(button1_name_change, 1500);
 
@@ -144,9 +159,10 @@
 		function btn_2() {
 			let url = document.getElementById("myTable").rows[1].cells[1].innerHTML;
 			let btn = document.getElementById("btn_2");
-			btn.innerHTML = "Copied ✅";
+			btn.innerHTML = "Copied";
 			btn.style.backgroundColor = "lightgreen"
-			btn.style.fontSize = "11px";
+			btn.style.fontSize = "16.5px";
+			btn.style.color = "black";
 			navigator.clipboard.writeText(url);
 			setTimeout(button2_name_change, 1500);
 
@@ -161,6 +177,8 @@
 			button.innerHTML = "Copy!";
 			button.style.backgroundColor = "#D2D2D2";
 			button.style.fontSize = "20px";
+			button.style.backgroundColor = "#3F6718";
+			button.style.color = "yellow";
 		}
 
 		function button2_name_change() {
@@ -168,6 +186,8 @@
 			button.innerHTML = "Copy!";
 			button.style.backgroundColor = "#D2D2D2";
 			button.style.fontSize = "20px";
+			button.style.backgroundColor = "#3F6718";
+			button.style.color = "yellow";
 		}
 
 	</script>

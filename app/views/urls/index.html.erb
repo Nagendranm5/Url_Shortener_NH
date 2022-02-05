@@ -1,7 +1,7 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<!-- <meta charset="utf-8"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -21,7 +21,15 @@
 		</div>
 	<% end %>
 
-	<footer style="margin-top: 405px;" align="center">Developed by&nbsp;<a href="https://instagram.com/nattu_nagendran" target="_blank"><em>Nagendran M</em></a></footer>
+	<div class="footer-block" align="center" style="margin-top: 348px;">Developed by&nbsp;Nagendran M
+		<div class="social-media-block">
+			<a href="https://github.com/Nagendranm5" class="fa fa-github-square" target="_blank" title="Github"></a>
+			<a href="https://in.linkedin.com/in/nagendranm08122000" class="fa fa-linkedin" target="_blank" title="LinkedIn"></a>
+			<a href="https://www.facebook.com/nagendran.nagendran.9461" class="fa fa-facebook" target="_blank" title="Facebook"></a>
+			<a href="https://www.instagram.com/nattu_nagendran" class="fa fa-instagram" target="_blank" title="Instagram"></a>  
+			<a href="https://twitter.com/nattu_nagendran" class="fa fa-twitter" target="_blank" title="Twitters"></a>
+		</div>
+	</div>
 
 
 	<!------------------------------------------------------------------------------>
@@ -31,6 +39,16 @@
 
 		body {
 			background-color: #B2ECEE;
+		}
+
+		.home-header {
+			color: #ECEC0E;
+			padding: 0.1px 20px;
+			background-color: #073809;
+			font-family: monospace;
+			font-size: 24px;
+			font-weight: 550;
+			margin-top: -7px;
 		}
 
 		.input-field {
@@ -46,7 +64,8 @@
 			color: red;
 			background-color: lightgreen;
 			font-weight: 550;
-			border-color: darkgreen;
+			border: none;
+			padding: 5px 12px;
 			border-radius: 6px;
 			cursor: pointer;
 		}
@@ -74,14 +93,21 @@
 			opacity: 0.9;
 		}
 
-		.home-header {
-			color: #ECEC0E;
-			padding: 0.1px 20px;
-			background-color: #073809;
+		.footer-block {
+			padding: 18px;
 			font-family: monospace;
-			font-size: 24px;
+			font-size: 14px;
+			letter-spacing: -0.6px;
+			background-color: #43484B;
+			margin-top: 348px;
+			margin-bottom: -10px;
+			color: #C1C6C8;
 			font-weight: 550;
-			margin-top: -23px;
+		}
+
+		.social-media-block {
+			margin-top: 10px;
+			font-size: 19px;
 		}
 
 		</style>
