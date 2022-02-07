@@ -13,7 +13,7 @@
 	<%= form_for(@url) do |f| %>
 		<div align="center" class="input-field">
 				<%= f.label "Enter You Url :" %>
-				<%= f.text_field :original_url, required: true %>
+				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true %>
 				<input type="reset" name="Reset" class="reset-btn">			
 		</div>
 		<div align="center">
@@ -64,6 +64,22 @@
 			letter-spacing: -1.8px;
 			word-spacing: -3px;
 			font-weight: 550;
+		}
+
+		.form {
+			padding: 0 3px;
+			min-height: 29px;
+			min-width: 29%;
+			font-size: 20px;
+			border: 1px solid orange;
+			background-color: #A8D1B9;
+			border-radius: 7px;
+			outline-color: green;
+		}
+
+		.form:focus {
+			background-color: lightgrey;
+			outline-color: orange;
 		}
 
 		.reset-btn {
