@@ -10,6 +10,10 @@
     font-weight: 550;
 }
 
+a {
+    text-decoration: none;
+}
+
 .social-media-block {
     margin-top: 10px;
     font-size: 19px;
