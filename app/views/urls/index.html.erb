@@ -12,7 +12,7 @@
 
 	<%= form_for(@url) do |f| %>
 		<div align="center" class="input-field">
-				<%= f.label "Enter You Url :" %>
+				<%= f.label "Enter You Url :", class: "label" %>
 				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true %>
 				<input type="reset" name="Reset" class="reset-btn">			
 		</div>
@@ -54,6 +54,11 @@
 		@media (max-width: 480px) {
 			.home-header {
 				font-size: 20px;
+				font-weight: 600;
+			}
+
+			.label {
+				font-weight: 600;
 			}
 		}
 
