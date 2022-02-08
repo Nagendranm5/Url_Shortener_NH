@@ -16,7 +16,7 @@ module UrlHelper
 		if !original_url.starts_with?("http")
 			original_url = "http://" + original_url + "/"
 		end
-		return original_url
+		return original_url.downcase
 	end
 
 end
