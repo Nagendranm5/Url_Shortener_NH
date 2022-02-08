@@ -10,10 +10,10 @@
 			<p>Shorten your url here</p>
 	</div>
 
-	<%= form_for(@url) do |f| %>
+	<%= form_for [@url], :remote => true, :html => {:id => 'form'} do |f| %>
 		<div align="center" class="input-field">
 				<%= f.label "Enter You Url :", class: "label" %>
-				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true %>
+				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true, id: 'url-form' %>
 				<input type="reset" name="Reset" class="reset-btn">			
 		</div>
 		<div align="center">
@@ -148,7 +148,31 @@
 			}
 		}
 
-
 		</style>
+
+		<script type="text/javascript">
+			
+			var url = document.getElementById('url-form');
+			var form = document.getElementById('form');
+
+			form.addEventListener('submit', (e)=>{
+				if(check_domain(url.value)){
+					alert("Please enter the Valid URL!")
+					e.preventDefault()
+				}
+			})
+
+			function check_domain(param_url) {
+				const domains = ["com","ru","org","net","in","ir","au","uk","ua","ca","co","us"]
+				const url = param_url.replace(/\//g,'')
+				for(let i=0 ; i < domains.length ; i++){
+					if(url.includes("."+domains[i])){
+						return false;
+					}
+				}
+				return true;
+			}
+
+		</script>
 </body>
 </html>
