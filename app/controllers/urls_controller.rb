@@ -8,7 +8,8 @@ class UrlsController < ApplicationController
     def create
         if url_params[:original_url].present?
             generated_url = generate_new_url
-            @url = Url.create(original_url: url_params[:original_url], generated_url: generated_url, active: true)
+            original_url = convert_valid_url(url_params[:original_url])
+            @url = Url.create(original_url: original_url, generated_url: generated_url, active: true)
             if @url.save
                redirect_to myurl_path(generated_url)
             end

@@ -1,7 +1,6 @@
 module UrlHelper
 
 	def generate_new_url
-		return SecureRandom.hex(4)
 		loop do
 			@new_url = SecureRandom.hex(4)
 			@exist_checking = Url.find_by(generated_url: @new_url)
@@ -9,6 +8,15 @@ module UrlHelper
 				break
 			end
 		end
+		return @new_url
+	end
+
+	def convert_valid_url(original_url)
+		original_url = original_url
+		if !original_url.starts_with?("http")
+			original_url = "http://" + original_url + "/"
+		end
+		return original_url
 	end
 
 end
