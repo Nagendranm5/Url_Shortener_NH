@@ -17,11 +17,83 @@
 				<input type="reset" name="Reset" class="reset-btn">			
 		</div>
 		<div align="center">
-			<button type="submit" title="Shorten your Url">Shorten</button>
+			<button type="submit" title="Shorten your Url" id="button">Shorten</button>
 		</div>
 	<% end %>
 
-	<div class="footer-block" align="center">Developed by&nbsp;Nagendran M
+	<!-- <div align="center" class="prev-urls">
+		<span class="head-text">Previous shortened url's</span>
+		<em class="hint-text">(last five)</em>
+		<div class="urls">
+			<p>
+				<span id="url-o-1" class="original-url" align="left"></span>
+				<span id="url-g-1" class="generated-url" align="right"></span>
+			</p>
+			<p>
+				<span id="url-o-2" class="original-url" align="left"></span>
+				<span id="url-g-2" class="generated-url" align="right"></span>
+			</p>
+			<p>
+				<span id="url-o-3" class="original-url" align="left"></span>
+				<span id="url-g-3" class="generated-url" align="right"></span>
+			</p>
+			<p>
+				<span id="url-o-4" class="original-url" align="left"></span>
+				<span id="url-g-4" class="generated-url" align="right"></span>
+			</p>
+			<p>
+				<span id="url-o-5" class="original-url" align="left"></span>
+				<span id="url-g-5" class="generated-url" align="right"></span>
+			</p>
+		</div>
+	</div> -->
+
+	<div align="center" class="prev-urls">
+		<span class="head-text">Previous shortened url's</span>
+		<em class="hint-text">(last five)</em>
+	</div>
+
+	<div align="center">
+	    <ul>
+	      <div class="c">
+	      <li class="a" id="url-o-1" tabIndex="-1"></li>
+	      <li class="b" id="url-g-1"></li>
+	      <li class="d">
+	        <button class="copy-button" id="copy-button">Copy</button>
+	      </li>
+	    </div>
+	    <div class="c">
+	      <li class="a" id="url-o-2"></li>
+	      <li class="b" id="url-g-2"></li>
+	      <li class="d">
+	        <button class="copy-button">Copy</button>
+	      </li>
+	    </div>
+	      <div class="c">
+	      <li class="a" id="url-o-3"></li>
+	      <li class="b" id="url-g-3"></li>
+	      <li class="d">
+	        <button class="copy-button">Copy</button>
+	      </li>
+	    </div>
+	      <div class="c">
+	      <li class="a" id="url-o-4"></li>
+	      <li class="b" id="url-g-4"></li>
+	      <li class="d">
+	        <button class="copy-button">Copy</button>
+	      </li>
+	    </div>
+	    <div class="c">
+	      <li class="a" id="url-o-5"></li>
+	      <li class="b" id="url-g-5"></li>
+	      <li class="d">
+	        <button class="copy-button">Copy</button>
+	      </li>
+	    </div>
+	    </ul>
+  </div>
+
+	<footer class="footer-block" align="center">Developed by&nbsp;Nagendran M
 		<div class="social-media-block">
 			<a href="https://github.com/Nagendranm5" class="fa fa-github-square" target="_blank" title="Github"></a>
 			<a href="https://in.linkedin.com/in/nagendranm08122000" class="fa fa-linkedin" target="_blank" title="LinkedIn"></a>
@@ -29,7 +101,13 @@
 			<a href="https://www.instagram.com/nattu_nagendran" class="fa fa-instagram" target="_blank" title="Instagram"></a>  
 			<a href="https://twitter.com/nattu_nagendran" class="fa fa-twitter" target="_blank" title="Twitters"></a>
 		</div>
-	</div>
+	</footer>
+
+	<p id="url-l-1" style="display: none;"></p>
+	<p id="url-l-2" style="display: none;"></p>
+	<p id="url-l-3" style="display: none;"></p>
+	<p id="url-l-4" style="display: none;"></p>
+	<p id="url-l-5" style="display: none;"></p>
 
 
 	<!------------------------------------------------------------------------------>
@@ -91,7 +169,7 @@
 			opacity: 1;
 		}
 
-		button {
+		#button {
 			color: brown;
 			background-color: orange;
 			border: none;
@@ -109,7 +187,137 @@
 			opacity: 0.9;
 		}
 
-		.footer-block {
+		.prev-urls {
+			margin-top: 40px;
+			margin-bottom: 30px;
+			font-size: 1.2rem;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.head-text {
+			color: blue;
+			letter-spacing: -0.5px;
+			font-weight: bold;
+		}
+
+		.hint-text {
+			color: grey;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+
+		/*
+
+		.urls {
+			margin-top: 35px;
+		}
+
+		.original-url {
+			display: block;
+			margin-top: -10px;
+			margin-left: 150px;
+		}
+
+		.generated-url {
+			display: block;
+			color: blue;
+			margin-top: -22px;
+			margin-right: 300px;
+		}
+*/		
+
+	.copy-button {
+	    /*display: inline-block;*/
+	    /*margin-top: -10px;*/
+	    /*display: inline;*/
+	    border: none;
+	    background-color: lightgrey;
+	    font-weight: bold;
+	    color: darkorange;
+	    padding: 5px 10px;
+	    border-radius: 7px;
+	    cursor: pointer;
+	  }
+
+	  .copy-button:hover {
+	  	background-color: grey;
+	  	opacity: -0.5px;
+	  }
+
+	 ul {
+	  white-space: nowrap;
+	  height: 1em;
+	  }
+
+	.d{
+	  margin-left: 45px;
+	}
+
+	.c{
+	   list-style-type: none;
+	   margin-top: 20px;
+	   overflow-x: auto;
+	   display: flex;
+	   margin-left: 20px;
+	}
+
+	.a {
+	   list-style-type: none;
+	   background-color: lightgreen;
+	   width: 400px;
+	   overflow-x: auto;
+	   float: left;
+	   display: flex;
+	   margin-right: 90px;
+	   margin-left: 60px;
+	}
+
+	  .b {
+	     list-style-type: none;
+	     width: 330px;
+	     /*overflow-x: auto;*/
+	     float: center;
+	     display: flex;
+	     justify-content: center;
+	     margin-left: 120px;
+	     color: blue;
+	     background-color: yellow;
+	  }
+
+	  @media (max-width: 480px){
+	    .a{
+	      display: flex;
+	      justify-content: left;
+	      max-width: 100%;
+	      /*float: block;*/
+	      margin-left: 0;
+	      margin-right: 0;
+	    }
+
+	    .b{
+	      display: flex;
+	      justify-content: left;
+	      margin-right: 0;
+	      margin-left: 0;
+	      /*float: none;*/
+	      max-width: 100%;
+	    }
+
+	    .c{
+	      display: block;
+	      max-width: 100%;
+	      margin-top: 20px;
+	      margin-left: 0;
+	      margin-right: 0;
+	    }
+
+	    .d{
+	      max-width: 100%;
+	      margin-top: 10px;
+	    }
+	  }
+
+	.footer-block {
 			padding: 18px;
 			font-family: monospace;
 			font-size: 14px;
@@ -144,7 +352,7 @@
 				margin-top: 15px;
 			}
 			.footer-block {
-				margin-top: 270px;
+				margin-top: 460px;
 			}
 		}
 
@@ -174,6 +382,37 @@
 				return true;
 			}
 
+			function get_url_localStorage() {
+				var urls = localStorage.getItem("my_urls");
+				if(urls != null) {
+					urls = JSON.parse(urls);
+					var length = urls.length;
+					for(var i=urls.length-2, id = 1 ; i > urls.length - 5 && length > 0; i--, id++,length--) {
+						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url;
+						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
+						document.getElementById("url-l-"+id).innerHTML = urls[i].generated_url;
+					}
+				}
+			}
+
+			get_url_localStorage();
+
+			var copy_btn = document.getElementById("copy-button");
+
+			copy_btn.addEventListener('click', function(event){
+				var link = document.getElementById("url-l-1").innerHTML;
+				// link.focus();
+				// link.select();
+				console.log(link)
+				navigator.clipboard.writeText(link);
+				try {
+					var successful = document.execCommand('copy');
+					var message = successful ? 'successful' : 'unsuccessful';
+				} catch(err) {
+				}
+			});
+
 		</script>
+
 </body>
 </html>

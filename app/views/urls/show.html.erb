@@ -206,6 +206,7 @@
 			var exist_urls = localStorage.getItem("my_urls");
 			const original_url =  document.getElementById("url-main").innerHTML;
 			const generated_url = document.getElementById("myTable").rows[1].cells[1].innerHTML;
+			const original_url_temp = document.getElementById("myTable").rows[0].cells[1].innerHTML;
 
 			if(exist_urls == null) {
 				exist_urls = [];
@@ -214,7 +215,8 @@
 			}
 			var hash = {
 				"original_url": original_url,
-				"generated_url": generated_url
+				"generated_url": generated_url,
+				"original_url_temp": original_url_temp
 			}
 
 			var flag = true;
