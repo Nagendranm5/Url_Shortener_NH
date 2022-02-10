@@ -1,24 +1,5 @@
-# README
+You can shorten your long url with our application and generate qr code also. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Store the shortened url's in your account without pricing
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can access these url's in your account whenever you want
