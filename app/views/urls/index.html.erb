@@ -55,35 +55,35 @@
 
 	<div align="center">
 	    <ul>
-	      <div class="c">
+	      <div class="c" id="c1">
 	      <li class="a" id="url-o-1" tabIndex="-1"></li>
 	      <li class="b" id="url-g-1"></li>
 	      <li class="d">
 	        <button class="copy-button" onclick="copyToClipboard('1');">Copy</button>
 	      </li>
 	    </div>
-	    <div class="c">
+	    <div class="c" id="c2">
 	      <li class="a" id="url-o-2"></li>
 	      <li class="b" id="url-g-2"></li>
 	      <li class="d">
 	        <button class="copy-button" onclick="copyToClipboard('2');">Copy</button>
 	      </li>
 	    </div>
-	      <div class="c">
+	      <div class="c" id="c3">
 	      <li class="a" id="url-o-3"></li>
 	      <li class="b" id="url-g-3"></li>
 	      <li class="d">
 	        <button class="copy-button" onclick="copyToClipboard('3');">Copy</button>
 	      </li>
 	    </div>
-	      <div class="c">
+	      <div class="c" id="c4">
 	      <li class="a" id="url-o-4"></li>
 	      <li class="b" id="url-g-4"></li>
 	      <li class="d">
 	        <button class="copy-button" onclick="copyToClipboard('4');">Copy</button>
 	      </li>
 	    </div>
-	    <div class="c">
+	    <div class="c" id="c5">
 	      <li class="a" id="url-o-5"></li>
 	      <li class="b" id="url-g-5"></li>
 	      <li class="d">
@@ -257,7 +257,7 @@
 	   list-style-type: none;
 	   margin-top: 20px;
 	   /*overflow-x: auto;*/
-	   display: flex;
+	   display: none;
 	   margin-left: 20px;
 	}
 
@@ -390,6 +390,7 @@
 					urls = JSON.parse(urls);
 					var length = urls.length;
 					for(var i=urls.length-1, id = 1 ; i >= urls.length - 5 && length > 0; i--, id++,length--) {
+						document.getElementById("c"+id).style.display = 'flex';
 						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url_temp;
 						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
 					}
