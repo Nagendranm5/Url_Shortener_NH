@@ -12,7 +12,7 @@
 
 	<%= form_for [@url], :remote => true, :html => {:id => 'form'} do |f| %>
 		<div align="center" class="input-field">
-				<%= f.label "Enter You Url :", class: "label" %>
+				<%= f.label "Enter You Url", class: "label" %>
 				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true, id: 'url-form' %>
 				<input type="reset" name="Reset" class="reset-btn">			
 		</div>
