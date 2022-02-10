@@ -56,37 +56,37 @@
 	<div align="center">
 	    <ul>
 	      <div class="c" id="c1">
-	      <li class="a" id="url-o-1" tabIndex="-1"></li>
+	      <li class="a" id="url-o-1"></li>
 	      <li class="b" id="url-g-1"></li>
-	      <li class="d">
+	      <li class="d" id="d1">
 	        <button class="copy-button" onclick="copyToClipboard('1');">Copy</button>
 	      </li>
 	    </div>
 	    <div class="c" id="c2">
 	      <li class="a" id="url-o-2"></li>
 	      <li class="b" id="url-g-2"></li>
-	      <li class="d">
+	      <li class="d" id="d2">
 	        <button class="copy-button" onclick="copyToClipboard('2');">Copy</button>
 	      </li>
 	    </div>
 	      <div class="c" id="c3">
 	      <li class="a" id="url-o-3"></li>
 	      <li class="b" id="url-g-3"></li>
-	      <li class="d">
+	      <li class="d" id="d3">
 	        <button class="copy-button" onclick="copyToClipboard('3');">Copy</button>
 	      </li>
 	    </div>
 	      <div class="c" id="c4">
 	      <li class="a" id="url-o-4"></li>
 	      <li class="b" id="url-g-4"></li>
-	      <li class="d">
+	      <li class="d" id="d4">
 	        <button class="copy-button" onclick="copyToClipboard('4');">Copy</button>
 	      </li>
 	    </div>
 	    <div class="c" id="c5">
 	      <li class="a" id="url-o-5"></li>
 	      <li class="b" id="url-g-5"></li>
-	      <li class="d">
+	      <li class="d" id="d5">
 	        <button class="copy-button" onclick="copyToClipboard('5');">Copy</button>
 	      </li>
 	    </div>
@@ -384,6 +384,40 @@
 				return true;
 			}
 
+			function changeStyleResponsive(x,id) {
+				if(x.matches) {
+					console.log(id)
+
+					var element = document.getElementById("url-o-"+id);
+					element.style.display = "flex";
+					element.style.justifyContent = "left";
+					element.style.maxWidth = "100%";
+					element.style.marginLeft = "0";
+					element.style.marginRight = "0";
+
+					element = document.getElementById("url-g-"+id);
+					element.style.display = "flex";
+					element.style.justifyContent = "left";
+					element.style.maxWidth = "100%";
+					element.style.marginLeft = "0";
+					element.style.marginRight = "0";
+
+					element = document.getElementById("c"+id);
+					element.style.display = "block";
+					element.style.maxWidth = "100%";
+					element.style.marginTop = "20px";
+					element.style.marginLeft = "-35px";
+					element.style.marginRight = "0";
+					element.style.fontSize = "13px";
+
+					element = document.getElementById("d"+id);
+					element.style.marginTop = "10px";
+					element.style.marginLeft = "-5px";
+				} else {
+					console.log("no")
+				}
+			}
+
 			function get_url_localStorage() {
 				var urls = localStorage.getItem("my_urls");
 				if(urls != null) {
@@ -393,6 +427,9 @@
 						document.getElementById("c"+id).style.display = 'flex';
 						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url_temp;
 						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
+						var x = window.matchMedia("(max-width: 480px)");
+						changeStyleResponsive(x,id);
+						// x.addListener(changeStyleResponsive(id));
 					}
 				}
 			}
@@ -412,45 +449,6 @@
 			}
 
 		</script>
-
-		<style type="text/css">
-			
-			@media (max-width: 480px){
-	    .a{
-	      display: flex;
-	      justify-content: left;
-	      max-width: 100%;
-	      /*float: block;*/
-	      margin-left: 0;
-	      margin-right: 0;
-	    }
-
-	    .b{
-	      display: flex;
-	      justify-content: left;
-	      margin-right: 0;
-	      margin-left: 0;
-	      /*float: none;*/
-	      max-width: 100%;
-	    }
-
-	    .c{
-	      display: block;
-	      max-width: 100%;
-	      margin-top: 20px;
-	      margin-left: -35px;
-	      margin-right: 0;
-	      font-size: 13px;
-	    }
-
-	    .d{
-	      /*max-width: 50%;*/
-	      margin-top: 10px;
-	      margin-left: -5px;
-	    }
-	  }
-
-		</style>
 
 </body>
 </html>
