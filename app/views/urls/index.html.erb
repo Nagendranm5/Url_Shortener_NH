@@ -59,35 +59,35 @@
 	      <li class="a" id="url-o-1" tabIndex="-1"></li>
 	      <li class="b" id="url-g-1"></li>
 	      <li class="d">
-	        <button class="copy-button" id="copy-button">Copy</button>
+	        <button class="copy-button" onclick="copyToClipboard('1');">Copy</button>
 	      </li>
 	    </div>
 	    <div class="c">
 	      <li class="a" id="url-o-2"></li>
 	      <li class="b" id="url-g-2"></li>
 	      <li class="d">
-	        <button class="copy-button">Copy</button>
+	        <button class="copy-button" onclick="copyToClipboard('2');">Copy</button>
 	      </li>
 	    </div>
 	      <div class="c">
 	      <li class="a" id="url-o-3"></li>
 	      <li class="b" id="url-g-3"></li>
 	      <li class="d">
-	        <button class="copy-button">Copy</button>
+	        <button class="copy-button" onclick="copyToClipboard('3');">Copy</button>
 	      </li>
 	    </div>
 	      <div class="c">
 	      <li class="a" id="url-o-4"></li>
 	      <li class="b" id="url-g-4"></li>
 	      <li class="d">
-	        <button class="copy-button">Copy</button>
+	        <button class="copy-button" onclick="copyToClipboard('4');">Copy</button>
 	      </li>
 	    </div>
 	    <div class="c">
 	      <li class="a" id="url-o-5"></li>
 	      <li class="b" id="url-g-5"></li>
 	      <li class="d">
-	        <button class="copy-button">Copy</button>
+	        <button class="copy-button" onclick="copyToClipboard('5');">Copy</button>
 	      </li>
 	    </div>
 	    </ul>
@@ -102,8 +102,6 @@
 			<a href="https://twitter.com/nattu_nagendran" class="fa fa-twitter" target="_blank" title="Twitters"></a>
 		</div>
 	</footer>
-
-	<input id="url-l-1" type="" name="" value="nagendran">
 
 	<p id="url-l-6" style="display: none;"></p>
 	<p id="url-l-2" style="display: none;"></p>
@@ -267,7 +265,7 @@
 	   list-style-type: none;
 	   background-color: lightgreen;
 	   width: 400px;
-	   overflow-x: auto;
+	   /*overflow-x: auto;*/
 	   float: left;
 	   display: flex;
 	   margin-right: 90px;
@@ -389,8 +387,8 @@
 				if(urls != null) {
 					urls = JSON.parse(urls);
 					var length = urls.length;
-					for(var i=urls.length-1, id = 1 ; i > urls.length - 5 && length > 0; i--, id++,length--) {
-						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url;
+					for(var i=urls.length-1, id = 1 ; i >= urls.length - 5 && length > 0; i--, id++,length--) {
+						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url_temp;
 						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
 						document.getElementById("url-l-"+id).innerHTML = urls[i].generated_url;
 					}
@@ -399,20 +397,17 @@
 
 			get_url_localStorage();
 
-			var copy_btn = document.getElementById("copy-button");
-
-			copy_btn.addEventListener('click', function(event){
-				var link = document.getElementById("url-l-1");
-				link.focus();
-				link.select();
-				console.log(link)
-				// navigator.clipboard.writeText(link);
-				try {
-					var successful = document.execCommand('copy');
-					var message = successful ? 'successful' : 'unsuccessful';
-				} catch(err) {
-				}
-			});
+			function copyToClipboard(btn) {
+				var url_2 = document.getElementById("url-g-"+btn).innerText;
+				var new_element = document.createElement('textarea');
+				new_element.value = url_2;
+		        new_element.setAttribute('readonly', '');
+		        new_element.style = {position: 'absolute', left: '-9999px'};
+		        document.body.appendChild(new_element);
+		        new_element.select();
+		        document.execCommand('copy');
+		        document.body.removeChild(new_element);
+			}
 
 		</script>
 
