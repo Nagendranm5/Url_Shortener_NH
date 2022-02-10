@@ -389,7 +389,7 @@
 				if(urls != null) {
 					urls = JSON.parse(urls);
 					var length = urls.length;
-					for(var i=urls.length-2, id = 1 ; i > urls.length - 5 && length > 0; i--, id++,length--) {
+					for(var i=urls.length-1, id = 1 ; i > urls.length - 5 && length > 0; i--, id++,length--) {
 						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url;
 						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
 						document.getElementById("url-l-"+id).innerHTML = urls[i].generated_url;
