@@ -227,7 +227,10 @@
 */		
 
 	.copy-button {
-		display: none;
+	    /*display: inline-block;*/
+	    /*margin-top: -10px;*/
+	    /*display: inline;*/
+	    display: block;
 	    border: none;
 	    background-color: lightgrey;
 	    font-weight: bold;
@@ -409,7 +412,6 @@
 					element.style.fontSize = "13px";
 
 					element = document.getElementById("d"+id);
-					element.style.display="flex"
 					element.style.marginTop = "10px";
 					element.style.marginLeft = "-5px";
 				} else {
