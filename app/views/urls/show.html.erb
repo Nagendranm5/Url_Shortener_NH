@@ -112,9 +112,9 @@
 			font-size: 20px;
 			color: yellow;
 			border-color: #D2D2D2;
-		    cursor: pointer;
-		    border: none;
-		    border-radius: 8px;
+			cursor: pointer;
+			border: none;
+			border-radius: 8px;
 		}
 
 		.btn-1:hover {
@@ -163,12 +163,12 @@
 			var url_2 = document.getElementById("url-main").innerText;
 			var new_element = document.createElement('textarea');
 			new_element.value = url_2;
-	        new_element.setAttribute('readonly', '');
-	        new_element.style = {position: 'absolute', left: '-9999px'};
-	        document.body.appendChild(new_element);
-	        new_element.select();
-	        document.execCommand('copy');
-	        document.body.removeChild(new_element);
+			new_element.setAttribute('readonly', '');
+			new_element.style = {position: 'absolute', left: '-9999px'};
+			document.body.appendChild(new_element);
+			new_element.select();
+			document.execCommand('copy');
+			document.body.removeChild(new_element);
 
 
 			btn.innerHTML = "Copied";
@@ -178,8 +178,8 @@
 			setTimeout(button1_name_change, 1500);
 
 			// Display the status in the console
-			console.log("Original Url Was Copied To Your Clipboard Successfully!");
-			console.log(navigator.clipboard.readText());
+			// console.log("Original Url Was Copied To Your Clipboard Successfully!");
+			// console.log(navigator.clipboard.readText());
 		}
 
 		function btn_2() {
@@ -188,12 +188,12 @@
 			var url_2 = document.getElementById("myTable").rows[1].cells[1].innerText;
 			var new_element = document.createElement('textarea');
 			new_element.value = url_2;
-	        new_element.setAttribute('readonly', '');
-	        new_element.style = {position: 'absolute', left: '-9999px'};
-	        document.body.appendChild(new_element);
-	        new_element.select();
-	        document.execCommand('copy');
-	        document.body.removeChild(new_element);
+			new_element.setAttribute('readonly', '');
+			new_element.style = {position: 'absolute', left: '-9999px'};
+			document.body.appendChild(new_element);
+			new_element.select();
+			document.execCommand('copy');
+			document.body.removeChild(new_element);
 
 			btn.innerHTML = "Copied";
 			btn.style.backgroundColor = "lightgreen"
@@ -202,8 +202,8 @@
 			setTimeout(button2_name_change, 1500);
 
 			// Display the status in the console
-			console.log("Generated Url Was Copied To Your Clipboard Successfully!\n");
-			console.log(navigator.clipboard.readText());
+			// console.log("Generated Url Was Copied To Your Clipboard Successfully!\n");
+			// console.log(navigator.clipboard.readText());
 		}
 
 		function button1_name_change() {
