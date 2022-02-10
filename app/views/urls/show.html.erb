@@ -154,13 +154,23 @@
 	<script type="text/javascript">
 
 		function btn_1() {
-			let url = document.getElementById("url-main").innerHTML;
 			let btn = document.getElementById("btn_1");
+
+			var url_2 = document.getElementById("url-main").innerText;
+			var new_element = document.createElement('textarea');
+			new_element.value = url_2;
+	        new_element.setAttribute('readonly', '');
+	        new_element.style = {position: 'absolute', left: '-9999px'};
+	        document.body.appendChild(new_element);
+	        new_element.select();
+	        document.execCommand('copy');
+	        document.body.removeChild(new_element);
+
+
 			btn.innerHTML = "Copied";
 			btn.style.backgroundColor = "lightgreen"
 			btn.style.fontSize = "16.5px";
 			btn.style.color = "black";
-			navigator.clipboard.writeText(url);
 			setTimeout(button1_name_change, 1500);
 
 			// Display the status in the console
@@ -169,13 +179,22 @@
 		}
 
 		function btn_2() {
-			let url = document.getElementById("myTable").rows[1].cells[1].innerHTML;
 			let btn = document.getElementById("btn_2");
+
+			var url_2 = document.getElementById("myTable").rows[1].cells[1].innerText;
+			var new_element = document.createElement('textarea');
+			new_element.value = url_2;
+	        new_element.setAttribute('readonly', '');
+	        new_element.style = {position: 'absolute', left: '-9999px'};
+	        document.body.appendChild(new_element);
+	        new_element.select();
+	        document.execCommand('copy');
+	        document.body.removeChild(new_element);
+
 			btn.innerHTML = "Copied";
 			btn.style.backgroundColor = "lightgreen"
 			btn.style.fontSize = "16.5px";
 			btn.style.color = "black";
-			navigator.clipboard.writeText(url);
 			setTimeout(button2_name_change, 1500);
 
 			// Display the status in the console

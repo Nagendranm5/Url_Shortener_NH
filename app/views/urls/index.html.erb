@@ -103,11 +103,11 @@
 		</div>
 	</footer>
 
-	<p id="url-l-6" style="display: none;"></p>
+	<!-- <p id="url-l-6" style="display: none;"></p>
 	<p id="url-l-2" style="display: none;"></p>
 	<p id="url-l-3" style="display: none;"></p>
 	<p id="url-l-4" style="display: none;"></p>
-	<p id="url-l-5" style="display: none;"></p>
+	<p id="url-l-5" style="display: none;"></p> -->
 
 
 	<!------------------------------------------------------------------------------>
@@ -390,7 +390,6 @@
 					for(var i=urls.length-1, id = 1 ; i >= urls.length - 5 && length > 0; i--, id++,length--) {
 						document.getElementById("url-o-"+id).innerHTML = urls[i].original_url_temp;
 						document.getElementById("url-g-"+id).innerHTML = urls[i].generated_url;
-						document.getElementById("url-l-"+id).innerHTML = urls[i].generated_url;
 					}
 				}
 			}
