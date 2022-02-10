@@ -103,7 +103,9 @@
 		</div>
 	</footer>
 
-	<p id="url-l-1" style="display: none;"></p>
+	<input id="url-l-1" type="" name="" value="nagendran">
+
+	<p id="url-l-6" style="display: none;"></p>
 	<p id="url-l-2" style="display: none;"></p>
 	<p id="url-l-3" style="display: none;"></p>
 	<p id="url-l-4" style="display: none;"></p>
@@ -400,11 +402,11 @@
 			var copy_btn = document.getElementById("copy-button");
 
 			copy_btn.addEventListener('click', function(event){
-				var link = document.getElementById("url-l-1").innerHTML;
-				// link.focus();
-				// link.select();
+				var link = document.getElementById("url-l-1");
+				link.focus();
+				link.select();
 				console.log(link)
-				navigator.clipboard.writeText(link);
+				// navigator.clipboard.writeText(link);
 				try {
 					var successful = document.execCommand('copy');
 					var message = successful ? 'successful' : 'unsuccessful';
