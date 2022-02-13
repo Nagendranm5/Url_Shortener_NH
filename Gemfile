@@ -13,6 +13,8 @@ gem "pg", "~> 1.1"
 
 gem 'puma', '~> 5.6', '>= 5.6.2' 
 
+gem 'actionpack', '~> 7.0', '>= 7.0.2.2'
+
 gem "importmap-rails"
 
 gem "turbo-rails"
