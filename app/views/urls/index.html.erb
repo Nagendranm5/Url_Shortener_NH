@@ -14,7 +14,7 @@
 		<div align="center" class="input-field">
 				<%= f.label "Enter You Url", class: "label" %>
 				<%= f.text_field :original_url, required: true, class: 'form', autofocus: true, id: 'url-form' %>
-				<input type="reset" name="Reset" class="reset-btn">			
+				<input type="reset" name="Reset" class="reset-btn" onclick="focus_back_to_form()">			
 		</div>
 		<div align="center">
 			<button type="submit" title="Shorten your Url" id="button">Shorten</button>
@@ -391,6 +391,11 @@
 				new_element.select();
 				document.execCommand('copy');
 				document.body.removeChild(new_element);
+			}
+
+			function focus_back_to_form() {
+				var form = document.getElementById("url-form");
+				form.focus();
 			}
 
 		</script>
