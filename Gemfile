@@ -27,6 +27,8 @@ gem "redis", "~> 4.0"
 
 # gem "bcrypt", "~> 3.1.7"
 
+gem "rqrcode", "~> 2.0"
+
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bootsnap", require: false
@@ -45,3 +47,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "chunky_png", "~> 1.4"

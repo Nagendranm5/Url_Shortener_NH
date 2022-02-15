@@ -42,9 +42,16 @@
 		</tbody>
 	</table>
 
+	<%= image_tag(@url.qrcodepng) if @url.qrcodepng.attached? %>
+
 	<div align="center">
+		<span class="footer-btns">
+			<%= button_to "Generate QR ", generate_qr_code_path(@url), method: :get, class: "btn-3" %>
+		</span>
 		<a href="/">
-			<button class="btn-3" title="Generate new url">Generate New</button>
+			<span class="footer-btns">
+				<button class="btn-3" title="Generate new url">Generate New</button>
+			</span>
 		</a>
 	</div>
 
@@ -140,6 +147,10 @@
 			margin-top: 15px;
 			border: none;
 			cursor: pointer;
+		}
+
+		.footer-btns {
+			display: inline-flex;
 		}
 
 		.btn-3:hover {
