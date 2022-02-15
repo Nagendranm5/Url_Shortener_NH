@@ -42,11 +42,18 @@
 		</tbody>
 	</table>
 
-	<%= image_tag(@url.qrcodepng) if @url.qrcodepng.attached? %>
+	<% if @url.qrcodepng.attached? %>
+		<div align="center">
+			<span class="qr-code">
+				<%= image_tag(@url.qrcodepng) %>
+			</span>
+			<%#= link_to "Download here", download_qr_code_path(@url) %>
+		</div>
+	<% end %>
 
 	<div align="center">
 		<span class="footer-btns">
-			<%= button_to "Generate QR ", generate_qr_code_path(@url), method: :get, class: "btn-3" %>
+			<%= button_to "Generate QR ", generate_qr_code_path(@url), method: :get, class: "btn-3" if !@url.qrcode? %>
 		</span>
 		<a href="/">
 			<span class="footer-btns">
