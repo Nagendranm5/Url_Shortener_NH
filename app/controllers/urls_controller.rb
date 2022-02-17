@@ -24,6 +24,8 @@ class UrlsController < ApplicationController
 	def get_original_url
 		@main_url = Url.find_by(generated_url: params[:generated_url])
 		if @main_url.present?
+			count = @main_url.count.nil? ? 1 : @main_url.count + 1
+			@main_url.update(count: count)
 			redirect_to "#{@main_url.original_url}", allow_other_host: true
 		else
 			render 'invalid_url_page'
