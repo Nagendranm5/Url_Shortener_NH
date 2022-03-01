@@ -7,6 +7,8 @@ gem "rails", "~> 7.0.0"
 
 gem 'pry'
 
+gem 'nokogiri', '~> 1.13', '>= 1.13.3'
+
 gem "sprockets-rails"
 
 gem "pg", "~> 1.1"
